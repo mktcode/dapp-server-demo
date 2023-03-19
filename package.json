@@ -3,14 +3,14 @@
   "version": "0.0.1",
   "scripts": {
     "lint": "eslint .",
-    "dev": "nodemon src/index.ts",
-    "start": "ts-node src/index.ts"
+    "dev": "nodemon --esm src/index.ts",
+    "start": "ts-node --esm src/index.ts"
   },
   "keywords": [],
   "author": "mktcode",
   "license": "ISC",
   "dependencies": {
-    "dapp-server": "^0.1.8"
+    "dapp-server": "file:../lib/packages/dapp-server"
   },
   "devDependencies": {
     "eslint": "^8.36.0",
