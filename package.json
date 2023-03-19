@@ -10,7 +10,9 @@
   "author": "mktcode",
   "license": "ISC",
   "dependencies": {
-    "dapp-server": "file:../lib/packages/dapp-server"
+    "dapp-server": "file:../lib/packages/dapp-server",
+    "graphql": "^16.6.0",
+    "graphql-tag": "^2.12.6"
   },
   "devDependencies": {
     "eslint": "^8.36.0",
