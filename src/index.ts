@@ -1,8 +1,7 @@
 import { createDappServer } from 'dapp-server';
 
-const dappServer = createDappServer({
+createDappServer({
   debug: true,
   port: 3004,
+  replayIndexer: true,
 });
-
-dappServer.replay();
