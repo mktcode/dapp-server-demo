@@ -1,15 +1,14 @@
-import { buildASTSchema } from "graphql";
 import gql from "graphql-tag";
 
-const ast = gql`
+export default gql`
 type MetaData {
-  logo: String!
-  website: String!
+  logo: String
+  website: String
 }
 
 type Sponsor {
   address: String!
-  amount: Boolean!
+  amount: String!
   metadata: MetaData!
 }
 
@@ -17,6 +16,4 @@ type Query {
   sponsors: [Sponsor!]
   sponsor(address: String!): Sponsor
 }
-`;
-
-export default buildASTSchema(ast);
+`
