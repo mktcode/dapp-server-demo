@@ -13,16 +13,6 @@ createDappServer({
 });
 ```
 
-I find it also a good place to check for required environment variables.
-
-```ts
-import { createDappServer } from 'dapp-server'
-
-if (!process.env.PROVIDER_URL) throw new Error('PROVIDER_URL is required')
-if (!process.env.WALLET_KEY) throw new Error('WALLET_KEY is required')
-// ...
-```
-
 ## `src/networks.ts`
 
 Here you define the EVM networks your dapp server will connect to. You can add as many networks as you want.
@@ -49,11 +39,13 @@ Here you define the addresses and abis of the contracts your dapp server will us
 ```ts
 import { registerContract } from "dapp-server"
 
-registerContract(
-  "0x7aa397146011eB300123f14d2A35c7225b7e7f93",
-  [ 'event Donated(address indexed from, uint256 amount, uint256 total)' ]
-)
+export const CONTRACT_ADDRESS = "0x7aa397146011eB300123f14d2A35c7225b7e7f93"
+export const CONTRACT_ABI = [ 'event Donated(address indexed from, uint256 amount, uint256 total)' ]
+
+registerContract(CONTRACT_ADDRESS, CONTRACT_ABI)
 ```
+
+You can export the address and abi of the contracts you register, so you can use them elsewhere but that's up to you. You can import JSON files or fetch your ABIs from etherscan.
 
 ## `src/indexer/*.ts
 
